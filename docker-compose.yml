@@ -1,0 +1,30 @@
+version: '2.4'
+services:
+ app:
+  image: flaskex:v1 
+  command: python3 app.py
+  depends_on: 
+   - database
+  ports: 
+   - "3000:5000"
+  environment:
+   DATABASE_URL: 172.16.238.16  
+
+  networks:
+   db-network:
+    ipv4_address: 172.16.238.10 
+ database:
+  image: sqlite:v1
+  volumes:
+   - "./local-db:/db"
+  networks:
+   db-network:
+    ipv4_address: 172.16.238.16
+  restart: always
+networks:
+ db-network:
+  driver: bridge
+  ipam:
+   config:
+    - subnet: 172.16.238.0/24
+      gateway: 172.16.238.1
