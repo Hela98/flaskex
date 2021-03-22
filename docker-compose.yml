@@ -8,7 +8,7 @@ services:
   ports: 
    - "3000:5000"
   environment:
-   DATABASE_URL: 172.18.1.4  
+   DATABASE_URL: 172.18.1.5  
 
   networks:
    db-network:
@@ -19,7 +19,7 @@ services:
    - "./local-db:/db"
   networks:
    db-network:
-    ipv4_address: 172.18.1.4
+    ipv4_address: 172.18.1.5
   restart: always
 networks:
  db-network:
