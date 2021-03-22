@@ -25,6 +25,7 @@ networks:
  db-network:
   driver: bridge
   ipam:
+   driver: default
    config:
     - subnet: 172.17.0.0/24
-      gateway: 172.17.0.1
+     
