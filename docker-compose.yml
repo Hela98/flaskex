@@ -8,18 +8,18 @@ services:
   ports: 
    - "3000:5000"
   environment:
-   DATABASE_URL: 10.0.0.15  
+   DATABASE_URL: 172.16.238.2  
 
   networks:
    db-network:
-    ipv4_address: 10.0.0.8 
+    ipv4_address: 172.16.238.3 
  database:
   image: sqlite:v1
   volumes:
    - "./local-db:/db"
   networks:
    db-network:
-    ipv4_address: 10.0.0.15
+    ipv4_address: 172.16.238.2
   restart: always
 networks:
  db-network:
@@ -27,7 +27,6 @@ networks:
   ipam:
    driver: default
    config:
-    - subnet: 10.0.0.0/16
-    #ip_range: 10.0.0.0/128
-    - gateway: 10.0.0.1
+    - subnet: 172.16.238.0/16
+    - gateway: 172.16.238.1
      
