@@ -9,6 +9,10 @@ services:
    - "3000:5000"
   environment:
    DATABASE_URL: 172.16.238.2  
+  dockerapp:
+   build: .
+   image: hela98/flaskex-images2
+
 
   networks:
    db-network:
