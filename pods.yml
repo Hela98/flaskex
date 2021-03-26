@@ -1,0 +1,12 @@
+appVersion: v1
+kind: Pod 
+metadata:
+  name: flaskex-app
+  labels:
+    app: flaskex-app
+spec:
+  containers:
+    - name: flaskex-app 
+      image: hela98/flaskex-images:tagVersion 
+      ports:
+        - containerPort: 9376
