@@ -11,10 +11,10 @@ services:
    DATABASE_URL: 172.16.238.2  
  dockerimage1:
   build: .
-  image: hela98/flaskex:latest
+  image: hela98/flaskex-images2/flaskex:latest
  dockerimage2:
   build: .
-  image: hela98/sqlite:latest
+  image: hela98/flaskex-images2/sqlite:latest
 
 
   networks:
