@@ -9,4 +9,4 @@ spec:
     - name: flaskex-app 
       image: hela98/flaskex-images2:tagVersion 
       ports:
-        - containerPort: 9376
+        - containerPort: 8080
